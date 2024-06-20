@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "weather",
-    "slug": "weather",
+    "slug": "weather-xtyghjmxpz8iduv2muguu",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -31,6 +31,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "bab334f7-6145-4575-ba96-a95c106ac9f7"
+      }
+    },
+    "owner": "dhananjayahlawat"
   }
 }
