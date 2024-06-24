@@ -2,7 +2,7 @@ import React, { useEffect, useState} from 'react';
 import {Text, View,TextInput, TouchableOpacity } from 'react-native'; 
 import * as Location from "expo-location";
 
-export const Searchbylocation = () => {
+export const Searchbylocation = ({updatelatlong}) => {
   const[lat,setlat] = useState();
   const[long,setlong] = useState();
       useEffect(()=> {
@@ -24,5 +24,8 @@ export const Searchbylocation = () => {
             };
             getLocation ();
       },[]);
+      useEffect(() => {
+        updatelatlong(lat,long);
+    },[lat,long]);
 
 } 
