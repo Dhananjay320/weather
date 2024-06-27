@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'; 
 import { Text, View, TextInput, TouchableOpacity } from 'react-native'; 
-import axios from 'axios';
 
 export const Searchbyadd = ({ restart,updatelatlong }) => {
     const [location, setLocation] = useState('');
