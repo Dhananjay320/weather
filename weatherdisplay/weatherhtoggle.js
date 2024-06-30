@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from 'react'; 
 import {Text, View,TextInput, TouchableOpacity } from 'react-native';
 import {Weatherresult} from './weathersearch'
+import {CurrentWeather} from './weathercurrent'
 
 export const Weathertoggle = () => {
    const [toggle,settongel] = useState (true);
    const [data,setdata] = useState ({});
+   const [current,setcurrent] = useState ();
+   const [daily,setdaily] =useState ();
    const settocurrent = () => {
      settongel(true);
    };
@@ -14,6 +17,10 @@ export const Weathertoggle = () => {
   const updatedata = (propse) => {
     setdata(propse);
   };
+  useEffect(() => {
+    setcurrent(data.current);
+    setdaily(data.daily);
+},[data]);
    return(
     <View style={{flex:1,backgroundColor:'#adf7f7',paddingTop:30}}>
         <View style={{flexDirection : 'row'}}>
@@ -25,7 +32,7 @@ export const Weathertoggle = () => {
         </TouchableOpacity>
         </View>
       <Weatherresult setdatareseved = {updatedata}/>
-
+       <CurrentWeather currentWeather={current} />
     </View>
    );
 };
