@@ -5,8 +5,8 @@ import { Searchbylocation } from './search/searchbylocation .js';
 import {Weathertoggle} from './weatherdisplay/weatherhtoggle.js';
 export const App = ()=> { 
     const [search,setsearch] = useState(false);
-    const [lat,setlat] =useState(19.0760);
-    const [long,setlong] =useState(72.8777);
+    const [lat,setlat] =useState();
+    const [long,setlong] =useState();
     const handelseaarchtongal = () =>
       {
         setsearch(!search);
@@ -26,8 +26,8 @@ export const App = ()=> {
        <TouchableOpacity onPress = {handelseaarchtongal}>
        <Text style={{fontSize:40,textAlign : 'center',borderRadius: 25,backgroundColor : "#D6BEEF",margin :15}}>Search</Text>
        </TouchableOpacity>}
-       {!search &&<Searchbylocation updatelatlong= {setlatlong}/>}
-       <Weathertoggle/>
+       {!search && <Searchbylocation updatelatlong= {setlatlong}/>}
+       <Weathertoggle lat ={lat} long ={long}/>
 		</View> 
 	); 
 } ;

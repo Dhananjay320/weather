@@ -10,6 +10,7 @@ export const CurrentWeather = ({ currentWeather }) => {
   useEffect(() => {
     if (currentWeather) {
       const { weather_code, temperature_2m } = currentWeather;
+      
       let video;
       if (
         [51, 52, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(
@@ -71,7 +72,9 @@ export const CurrentWeather = ({ currentWeather }) => {
     82: 'Violent rain shower',
     85: 'Snow shower',
     86: 'Heavy snow shower',
-
+    95: 'Thunderstorm',
+    96: 'Thunderstorm Slight hail',
+    99: 'Thunderstorm heavy hail',
   };
 
   const weatherCondition = weatherConditions[weather_code];
@@ -83,7 +86,7 @@ export const CurrentWeather = ({ currentWeather }) => {
         <Text style={styles.time}>{time}</Text>
         <View style={styles.weatherInfo}>
           <Text style={styles.temperature}>{temperature_2m}°C</Text>
-          <Text style={styles.condition}>{weatherCondition} ,{weather_code}</Text>
+          <Text style={styles.condition}>{weatherCondition} </Text>
         </View>
       </View>
       <View style = {{alignItems : 'center'}}>

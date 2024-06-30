@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import {Text, View,TextInput, TouchableOpacity } from 'react-native';
 import {Weatherresult} from './weathersearch'
 import {CurrentWeather} from './weathercurrent'
-
-export const Weathertoggle = () => {
+import {DailyWeatherForecast} from './weather14days.js'
+export const Weathertoggle = ({lat,long}) => {
    const [toggle,settongel] = useState (true);
    const [data,setdata] = useState ({});
    const [current,setcurrent] = useState ();
@@ -31,8 +31,9 @@ export const Weathertoggle = () => {
             <Text style={{fontSize:30,textAlign : 'center',borderRadius: 25,backgroundColor : "#D6BEEF",height :50,width:150,margin :15}}>14 Days</Text>
         </TouchableOpacity>
         </View>
-      <Weatherresult setdatareseved = {updatedata}/>
-       <CurrentWeather currentWeather={current} />
+      <Weatherresult setdatareseved = {updatedata} lat ={lat} long = {long} />
+      {toggle && <CurrentWeather currentWeather={current} />}
+      {!toggle &&  <DailyWeatherForecast dailyData ={daily}/>}
     </View>
    );
 };
