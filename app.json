@@ -40,6 +40,12 @@
         "projectId": "bab334f7-6145-4575-ba96-a95c106ac9f7"
       }
     },
-    "owner": "dhananjayahlawat"
+    "owner": "dhananjayahlawat",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/bab334f7-6145-4575-ba96-a95c106ac9f7"
+    }
   }
 }
