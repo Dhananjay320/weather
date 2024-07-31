@@ -6,7 +6,7 @@ export const Weatherresult = ({setdatareseved ,lat ,long}) => {
   useEffect(() => {
     if(lat&&long)
       {
-    fetch(`https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${long}&current=temperature_2m,rain,snowfall,weather_code&daily=temperature_2m_max,temperature_2m_min,rain_sum,snowfall_sum,weather_code&timezone=auto&forecast_days=14`)
+    fetch(`your api key`)
       .then((response) => response.json())
       .then((data) => {
         setData(data);
