@@ -12,7 +12,7 @@ export const Searchbyadd = ({ restart,updatelatlong }) => {
     useEffect(() => {
         const fetchCoordinates = async () => {
             try {
-                const response = await fetch(`https://geocode.maps.co/search?q=${location}&api_key=66728529ca425935316814gnrf6da3e`);
+                const response = await fetch(`your api key`);
                 const data = await response.json();
                 if (data.length > 0) {
                     const firstResult = data[0];
